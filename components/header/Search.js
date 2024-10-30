@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { SearchIcon } from "@heroicons/react/solid";
-import Link from 'next/link'
+import Link from "next/link";
+import preview2 from "../../data/Preview2";
+import preview from "../../data/PreviewProducts";
 
 const people = [
   { id: 1, name: "Durward Reynolds" },
@@ -9,7 +11,7 @@ const people = [
   { id: 4, name: "Benedict Kessler" },
   { id: 5, name: "Katelyn Rohan" },
 ];
-export default function Search({style}) {
+export default function Search({ style }) {
   const [selectedPerson, setSelectedPerson] = useState(people[0]);
   const [query, setQuery] = useState("");
 
@@ -18,6 +20,12 @@ export default function Search({style}) {
       ? people
       : people.filter((person) => {
           return person.name.toLowerCase().includes(query.toLowerCase());
+        });
+  const filteredProducts =
+    query === ""
+      ? preview
+      : preview2.filter((prod) => {
+          return prod.title.toLowerCase().includes(query.toLowerCase());
         });
 
   return (
@@ -31,25 +39,20 @@ export default function Search({style}) {
       />
       {query != "" && (
         <div className="py-2 space-y-4 px-4 flex flex-col border-solid border-[1px] border-gray-100 drop-shadow-2xl absolute top-full -left-3 right-0  text-black  bg-white rounded-xl m-0">
-          {filteredPeople.map((person) => (
+          {filteredProducts.map((prod) => (
             <a
               className=" text-black cursor-pointer"
-              key={person.id}
-              value={person}
+              key={prod.id}
+              value={prod.title}
+              href={`/Product/${prod.id}`}
             >
-              {person.name}
+              {prod.title}
             </a>
           ))}
-                  {
-            filteredPeople.length==0 &&
-            <a
-              className=" text-black cursor-not-allowed"
-            >
-              Nothing Found
-            </a>
-        }
+          {filteredProducts.length == 0 && (
+            <a className=" text-black cursor-not-allowed">Nothing Found</a>
+          )}
         </div>
-
       )}
     </div>
   );
