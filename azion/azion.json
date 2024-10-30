@@ -1,0 +1,58 @@
+{
+  "name": "Ecommerce3d",
+  "bucket": "Ecommerce3d",
+  "preset": "next",
+  "env": "production",
+  "prefix": "20241030153600",
+  "not-first-run": true,
+  "function": {
+    "id": 31480,
+    "name": "__DEFAULT__",
+    "file": ".edge/worker.js",
+    "args": "azion/args.json",
+    "instance-id": 30165,
+    "instance-name": "__DEFAULT__",
+    "cache-id": 183284
+  },
+  "application": {
+    "id": 1730302947,
+    "name": "__DEFAULT__"
+  },
+  "domain": {
+    "id": 1730301468,
+    "name": "Ecommerce3d",
+    "domain_name": "jeg6vqs1v6.map.azionedge.net",
+    "url": "https://jeg6vqs1v6.map.azionedge.net"
+  },
+  "rt-purge": {
+    "purge_on_publish": true
+  },
+  "origin": [
+    {
+      "origin-id": 161466,
+      "origin-key": "e25d6321-7622-4fca-9d5a-ed2a742c4531",
+      "name": "origin-storage-default"
+    }
+  ],
+  "rules-engine": {
+    "created": false,
+    "rules": [
+      {
+        "id": 313700,
+        "name": "Set Storage Origin for All Requests",
+        "phase": "request"
+      },
+      {
+        "id": 313701,
+        "name": "Deliver Static Assets",
+        "phase": "request"
+      },
+      {
+        "id": 313702,
+        "name": "Execute Edge Function",
+        "phase": "request"
+      }
+    ]
+  },
+  "cache-settings": []
+}
