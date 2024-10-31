@@ -1,16 +1,16 @@
-import Header from './header/Header'
-import React, {  useEffect ,useState } from "react";
-import CartMenu from '../components/ShoppingCart/CartMenu'
-export default function Layout({children}) {
+"use client";
+import Header from "./header/Header";
+import React, { useEffect, useState } from "react";
+import CartMenu from "../components/ShoppingCart/CartMenu";
+export default function Layout({ children }) {
   return (
     <div>
-        <Header />
-          <CartMenu  />
-            {children}
+      <Header />
+      <CartMenu />
+      {children}
     </div>
-  )
+  );
 }
-
 
 /*export async function getServerSideProps(context){
   const categories = [
@@ -32,3 +32,4 @@ export default function Layout({children}) {
   }
 
 }*/
+

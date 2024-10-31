@@ -28,3 +28,4 @@ Deploy your own NextJs Store Ecommerce project with Azion.
 [![Deploy Button](/static/button.png)](https://console.azion.com/create/azion-community/nextjs-store-ecommerce "Deploy with Azion")
 
 For a more detailed step-by-step, check the [documentation](https://www.azion.com/en/documentation/products/use-a-template-via-azion-console/).
+changes done
